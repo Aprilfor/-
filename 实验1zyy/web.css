@@ -1,0 +1,4 @@
+/*自动居中显示*/
+ul{list-style-type: none;text-align: center;}/*去掉列表项前面的符号，列表项居中显示*/
+li{display: inline;}/*列表项行内显示*/
+li a{padding:0 20px;}/*列表项中的超链接的宽度，分隔导航条目*/

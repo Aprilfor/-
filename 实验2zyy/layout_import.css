@@ -1,0 +1,8 @@
+#div0{border:1 solid #cccccc;
+  width:850px;
+height: 780px;
+margin: 5px auto;}
+
+#div3{padding-left: 40px;
+  font-size: 14px;
+  clear: both;}/*两侧元素均不浮动*/

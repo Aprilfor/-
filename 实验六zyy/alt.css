@@ -1,0 +1,35 @@
+div{
+  margin: 0 auto;
+  padding:30px 40px 30px;
+  background-color: #00ff99;
+}
+table{
+  border: 2px double #0000cc;
+  text-align: center;
+  margin: 0 auto;
+}
+#td1{
+  text-align:right;
+  font-size: 20px;
+  color: #6600ff;
+}
+#td2{
+  text-align: left;
+}
+lable{
+  color:red;
+  font-weight: bold;
+}
+h3{
+  background: #0033ff;
+  width:1200px;
+  height:40px;
+  padding:8px auto;
+  font-size: 28px;
+  text-align: center;
+  font-family: 隶书;
+  color: #ffffff;
+}
+input{
+  height:24px;
+}

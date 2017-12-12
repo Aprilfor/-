@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>校园办公系统认证界面</title>
+    <link rel="stylesheet" href="alt.css">
+    <script type="text/javascript">
+      function $(id){return document.getElementById(id);}
+
+      //检查卡号的有效性
+      function checkcardno(){
+        var cno=$("cardno").value;
+        $("err_cardno").innerHTML=" ";
+        if(cno==" "||cno==null){//为空或不输入时
+          $("err_cardno").innerHTML="卡号不能为空";
+        }
+        else if(cno.length!=6){
+          $("err_cardno").innerHTML="卡号长度必须为6";
+        }
+        else{
+          var firstnum=cno.charAt(0);
+          if(firstnum=="0"){
+            $("err_cardno").innerHTML="卡号首字母必须不能为0";
+          }
+
+        }
+      }
+      //检查密码的有效性
+      function checkkey(){
+        var key = $("key").value;
+        $("err_key").innerHTML = " ";
+        if (key == " " || key == null) {
+          $("err_key").innerHTML = "密码不能为空";
+        }
+        else if(key.length > 15 || key.length < 8) {
+          $("err_key").innerHTML = "口令长度在8到15之间";
+        }
+      }
+      //检查二次密码的有效性
+      function checkkey2(){
+        var key2= $("key2").value;
+        var key = $("key").value;
+        $("err_key2").innerHTML = " ";
+
+        if (key2== " " || key2 == null) {
+          $("err_key2").innerHTML = "卡号不能为空";
+        }
+        else if (key2.length > 15 || key2.length < 8) {
+          $("err_key2").innerHTML = "口令长度在8到15之间";
+        }
+        else if (key2!= key) {
+          $("err_key2").innerHTML = "二次口令与口令不同";
+        }
+      }
+      //检查qq/微信的有效性
+      function checkqqwx(){
+        var qqwx = $("qqwx").value;
+        $("err_qqwx").innerHTML = " ";
+        if (qqwx == " " || qqwx == null) {
+          $("err_qqwx").innerHTML = "卡号不能为空";
+        }
+      }
+      function check()  {
+        var cardno = $("err_cardno").innerHTML;
+        var key = $("err_key").innerHTML;
+        var key1 = $("err_key2").innerHTML;
+        var qqwx = $("err_qqwx").innerHTML;
+        if (cardno == " " && key == " " && key1 == " " && qqwx == " ")//所有的都通过才能提交
+          return true;
+        else {
+          alert("未规范输入，不能提交");
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="">
+      <form class="" action="index.html" method="post" name="myform" onsubmit="return check()">
+         <h3>校园办公系统认证界面</h3>
+        <table>
+
+        <tr>
+          <td rowspan="5"><img src="img1.jpg"></td>
+          <td id="td1">校园卡号</td>
+          <td id="td2"><input type="text" id="cardno" onblur="checkcardno()"></td>
+          <td><label  id="err_cardno"></label></td>
+        </tr>
+
+       <tr>
+         <td id="td1">口&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;令</td>
+         <td id="td2"><input type="password" id="key" onblur="checkkey()"></td>
+         <td><label  id="err_key"></label></td>
+       </tr>
+
+       <tr>
+         <td id="td1">二次口令</td>
+          <td id="td2"><input type="password" id="key2" onblur="checkkey2()" ></td>
+          <td><label  id="err_key2"></label></td>
+       </tr>
+
+       <tr>
+         <td id="td1">qq微信</td>
+         <td id="td2"><input type="text" id="qqwx" onblur="checkqqwx()"></td>
+         <td><label  id="err_qqwx"></label></td>
+       </tr>
+
+       <tr>
+         <td colspan="3">
+           <input type="submit" name="" value="提交">
+           <input type="reset" name="" value="重置">
+         </td>
+       </tr>
+
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

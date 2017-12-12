@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>成绩百分制转换为五级制</title>
+    <style media="screen" style="text/css">
+      #div1{
+        width: 300px;
+        height: 300px;
+        background-color: #006600;
+        padding: 100px;
+        margin:0 auto;
+        color: white;
+        font-size: 24px;
+        border: 8px;
+        border-style: double;
+        border-color: #009933;
+        text-align: center;
+      }
+    </style>
+    <script type="text/javascript">
+    function $(id) {return document.getElementById(id);}
+       function getscore(){
+         var score=prompt("请输入你的成绩：");
+         if(score!=null){
+         alert("课程成绩为:"+score);
+          $("score").value=score;
+          conversion(score);
+       }else{
+         alert("请你输入成绩!");
+       }
+     }
+      /*成绩与等级转换函数
+      参数：score表示输入成绩
+      返回值：result,等级*/
+      function conversion(score){
+        var result="",level=0;
+        if(score>=90){level=1};
+        if (score<90&&score>=80) {
+          level=2
+        };
+        if (score<80&&score>=70) {
+          level=3
+        };
+        if (score<70&&score>=60) {
+          level=4
+        };
+        if (score<60) {
+          level=5
+        };
+        switch (level) {
+          case 1:{result="优秀";break;}
+            case 2:{result="良好";break;}
+            case 3:{result="中等";break;}
+            case 4:{result="合格";break;}
+          default:{result="不及格";}
+        }
+        $("rank").value=("课程等级为"+result);
+      }
+    </script>
+  </head>
+  <body>
+      <div class="" id="div1">
+        <form class=""  method="post">
+           <p>课程成绩评定</p>
+             <input type="button" name="" value="课程成绩为" onclick="getscore();">
+             <input type="text" name="" value="" id="score" maxlength="10" readonly>
+             <input type="text" name="" value="" id="rank" readonly>
+        </form>
+      </div>
+  </body>
+</html>

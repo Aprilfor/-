@@ -1,0 +1,43 @@
+<!DOCTYPE html><!--prj_9_3-->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>消息对话框综合应用</title>
+    <style media="screen" type="text/css">
+      fieldset{background-color: #99ff99;
+      border: 8px;
+      border-style: ridge;
+      border-color: #3333cc;
+   }
+   legend{color: blue;}
+   form{margin:20px;
+     padding:20px;}
+    </style>
+
+    <script type="text/javascript">
+      function $(id) {return document.getElementById(id);}
+      function inputName(){
+        var name=prompt("输入你的姓名：","你好！");
+        if(name!=null){
+        alert("你的姓名是:"+name);
+        $("namel").value=name;
+      }else{
+        alert("请你输入姓名!");
+      }
+      }
+    </script>
+
+  </head>
+  <body>
+    <fieldset>
+      <legend align="center">消息对话框综合应用</legend>
+      <form class="" action="index.html" method="post">
+        <h2>你的名字</h2>
+        <input type="text" name="" value="" id="namel" maxlength="10" readonly>
+        <input type="button" name="" value="输入姓名" onclick="inputName();">
+        <input type="reset" name="clear" value="清空">
+      </form>
+    </fieldset>
+  </body>
+</html>
